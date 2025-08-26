@@ -15,15 +15,13 @@ function agregarProducto(){
         return;
     }
     else{
-        let i = 0;
         while (id != 0){
             if (isNaN(id)){
                 alert("Entrada no válida. Por favor, ingrese un número.");
             }else if (id>4 || id<0 ){
                 alert("Producto no encontrado. Intente nuevamente")
             }else{
-                vector[i] = productos[id-1];
-                i++;
+                vector.push(productos[id - 1])
                 alert("Su producto " + productos[id-1].nombre + " fue agregado correctamente al carrito✅");
             }
             id = parseInt(prompt("Ingrese el numero del producto para añadirlo al carrito 🛒\n(presione 0 para salir)\n 1.Monitor  $70.000\n 2.Teclado   $12.000\n 3.Mouse    $5.000\n 4.CPU        $120.000"));
