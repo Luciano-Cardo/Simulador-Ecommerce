@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.main-index{
+    text-align: center;
+}
+
+.form{
+    margin: 8px;
+}
+
+.h3-main{
+    padding: 32px;
+}
+
+.h2-main{
+    padding-top: 16px;
+}

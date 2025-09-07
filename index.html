@@ -1,15 +1,34 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simulador de Tienda Virtual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CURSO-JS | CARRITO DE COMPRA</title>
+  <!-- CSS -->
+   <link rel="stylesheet" href="./css/style.css">
+  <!-- JAVASCRIPT -->
+  <script src="main.js" defer></script>
 </head>
 <body>
-  <h1>Simulador de Tienda Virtual (Interacción por consola)</h1>
-  <p>
-    Este simulador permite al usuario agregar productos virtuales a un carrito de compras usando cuadros de diálogo
-    y visualizar el resumen desde la consola.
-  </p>
-  <script src="main.js"></script>
+    <main class="main-index">
+      <h1>===LISTA DE COMPRAS===</h1>
+      <h2 class="h2-main">Añadi un producto a la lista:</h2>
+      <div class="form">
+        <form action="">
+        <input type="text" id="nombre" placeholder="Nombre del producto" required>
+        <br>
+        <br>
+        <input type="text" id="precio" placeholder="Precio del producto" required >
+        <br>
+        <br>
+        <input type="submit" id="enviar" value="agregar">
+      </div>
+      <h2>Productos en la lista:</h2>
+      <ul id="lista" class="lista">
+      </ul>
+      <h3 class="h3-main">
+        TOTAL: $<span id="total">0</span>
+      </h3>
+    </main>
 </body>
 </html>
