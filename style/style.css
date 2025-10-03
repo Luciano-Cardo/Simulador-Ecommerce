@@ -1,0 +1,406 @@
+/*Extends*/
+ul, .index-header-flex, .contacto-header-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productos-header, .sucursales-header, .index-header {
+  background-image: url(../img/fondo2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.footer-nosotros,
+.footer-contacto {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.input-novedades, .input {
+  padding: 3px;
+  border: 2px solid transparent;
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.527);
+  transition: border 0.3s ease-in-out;
+}
+
+.formulario-contacto, .info-tienda {
+  padding: 2rem;
+  border-radius: 8px;
+  flex: 1;
+  margin-top: 5rem;
+}
+
+.novedades, .contacto-header, .nosotros-header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.formulario-contacto form, .contact-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-novedades, .novedades {
+  z-index: 1;
+  position: relative;
+}
+
+.ultimos-modelos-container, .contenedor-nosotros, .contenedor-nosotros2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-auto-btm, .card-auto {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* Variables */
+/* Estilos Header */
+/*Generales*/
+.index-header-flex, .contacto-header-flex {
+  justify-content: space-between; /*Da un espacio entre ellos(los links de la navbar)*/
+}
+
+.navegacion-superior ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none; /*Le saca el subrayado al a*/
+}
+
+.index-parrafo-header, .index-h1, .contacto-parrafo-header, .contacto-h1, .productos-h1, .productos-parrafo-header {
+  color: rgb(255, 255, 255);
+}
+
+.contenedor-inferior-header {
+  gap: 1rem;
+  max-width: 30rem; /*Limita el width*/
+}
+
+/*INDEX*/
+.btn-header {
+  font-weight: 500;
+  max-width: 30rem;
+  color: #4d4d4d;
+  padding: 15px 40px;
+  background-color: rgb(206, 206, 206);
+  font-family: monospace;
+  border-radius: 50px;
+  border: 2px solid rgb(206, 206, 206);
+  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px rgb(255, 255, 255);
+}
+
+.btn-header:hover {
+  box-shadow: inset 2px 2px 10px #bcbcbc, inset -2px -2px 10px rgb(255, 255, 255), inset 2px 2px 10px #bcbcbc, inset -2px -2px 10px rgb(255, 255, 255);
+}
+
+.btn-header a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+/*NOSOTROS*/
+.nosotros-header {
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+}
+
+.nosotros-header {
+  height: 50vh;
+}
+
+.sobre-nosotros {
+  padding: 4rem 2rem;
+}
+
+.contenedor-nosotros, .contenedor-nosotros2 {
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.imagen-nosotros img, .imagen-nosotros2 img {
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 30rem;
+  margin-top: 5rem;
+}
+
+.texto-nosotros, .texto-nosotros2 {
+  max-width: 600px;
+}
+
+.texto-nosotros h5, .texto-nosotros2 h5 {
+  color: #666;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.texto-nosotros h2, .texto-nosotros2 h2 {
+  font-size: 2rem;
+  color: #0056a6;
+  margin-bottom: 1rem;
+}
+
+.texto-nosotros p, .texto-nosotros2 p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.linea {
+  margin: auto;
+  width: 60%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/*CONTACTO*/
+.contact-wrapper {
+  background-color: rgba(0, 0, 0, 0.089);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.formulario-contacto {
+  background-color: rgb(255, 255, 255);
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.info-item i {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  min-width: 24px;
+}
+
+.formulario-contacto form {
+  gap: 1rem;
+}
+
+.formulario-contacto input,
+.formulario-contacto select,
+.formulario-contacto textarea {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #aaa;
+}
+
+.formulario-contacto button {
+  align-self: flex-end;
+  background-color: #14bde0;
+  color: rgb(255, 255, 255);
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.novedades {
+  background-image: url("../img/fondocontacto1.png");
+  color: rgb(0, 0, 0);
+  padding: 5rem 2rem 55px 2rem;
+  text-align: center;
+  height: 22rem;
+}
+
+.form-novedades {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.form-novedades input {
+  padding: 0.7rem 1rem;
+  border-radius: 2rem;
+  border: none;
+  width: 300px;
+}
+
+.form-novedades button {
+  border-radius: 50%;
+  border: none;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+input::placeholder {
+  font-size: 0.9rem;
+}
+
+.icono {
+  font-family: "Font Awesome 6 Free" !important;
+}
+
+/*SUCURSALES*/
+.sucursales-header {
+  height: 50vh;
+}
+
+.sucursales-main {
+  background-color: rgba(0, 0, 0, 0.185);
+}
+
+/*PRODUCTOS*/
+.productos-header {
+  height: 50vh;
+}
+
+.productos-header-container {
+  max-width: 40rem;
+}
+
+/* Estilos Mains */
+/*INDEX*/
+.main-index {
+  padding: 2rem;
+  background-color: rgba(245, 245, 220, 0.582);
+}
+
+.card-opinion {
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.div-contenedor {
+  border-radius: 20px;
+  width: 18rem;
+  background-color: rgba(255, 255, 255, 0.658);
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.card-texto {
+  padding: 2rem 1rem 0px 1rem;
+}
+
+.testimonial-card__icon {
+  padding-top: 16px;
+  padding-left: 16px;
+}
+
+/*PRODUCTOS*/
+.ultimos-modelos-titulo {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.card-auto {
+  width: 25rem;
+  background-color: rgba(0, 0, 0, 0.082);
+  transition: transform 0.5s;
+}
+
+.card-auto:hover {
+  transform: scale(1.02);
+}
+
+.card-auto img {
+  border: 0.5rem;
+}
+
+.card-auto h3, .card-auto p {
+  margin-left: 1rem;
+}
+
+.card-auto-btm {
+  border: none;
+  padding: 8px;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.26);
+}
+
+.ultimos-modelos-container {
+  gap: 1rem;
+}
+
+/*Estilos footer*/
+/*CONTACTO AND FOOTER*/
+/*Estilos Media Query*/
+/*LARGER SCREEN*/
+@media only screen and (min-width: 900px) {
+  ul, .index-header-flex {
+    flex-direction: row;
+  }
+  .sucursales-main-container {
+    flex-direction: row;
+    width: 50%;
+  }
+  .contenedor-inferior-header-sucursales {
+    max-width: 50%;
+  }
+  .btn-header {
+    width: 30rem;
+  }
+  .contact-wrapper {
+    flex-direction: row;
+  }
+  .info-tienda,
+  .formulario-contacto {
+    width: 50%;
+  }
+}
+/*TABLET*/
+/*LAPTOP*/
+/* Estilos Generales */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif !important;
+}
+
+.logotipo {
+  width: 5rem; /*Usamos rem para que se escale correctamente (un tema de mantener las proporciones consistentes, 1rem=16px)*/
+  height: 5rem;
+}
+
+ul {
+  list-style: none; /*Le saca las pelotitas a la lista*/
+  gap: 1rem;
+}
+
+.texto-hover {
+  transition: transform 0.8s ease;
+}
+.texto-hover:hover {
+  transform: scale(1.1);
+}
+
+.logotipo {
+  transition: transform 0.8s ease;
+}
+.logotipo:hover {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=style.css.map */

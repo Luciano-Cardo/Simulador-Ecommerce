@@ -1,0 +1,10 @@
+[
+  { "nombre": "Guitarra Electrica", "precio": 650000, "img": "../img/gibson.png", "descripcion": "Instrumento versátil usado en diversos géneros musicales." },
+  { "nombre": "Guitarra Acustica", "precio": 400000, "img": "../img/acustica.png", "descripcion": "Clásico instrumento de cuerda con sonido natural, ideal para acompañamiento y solos." },
+  { "nombre": "Violin", "precio": 450000, "img": "../img/violin.png", "descripcion": "Instrumento de cuerda frotada con tono agudo y melodioso, usado en música clásica." },
+  { "nombre": "Ukelele", "precio": 150000, "img": "../img/ukelele.png", "descripcion": "Pequeño instrumento de cuerda, ligero y alegre, perfecto para música tropical y folk." },
+  { "nombre": "Charango", "precio": 220000, "img": "../img/charango.png", "descripcion": "Instrumento tradicional de cuerda andina, con sonido brillante y alegre." },
+  { "nombre": "Bateria", "precio": 900000, "img": "../img/bateria.png", "descripcion": "Permite crear ritmos potentes y dinámicos para cualquier estilo musical." },
+  { "nombre": "Bajo", "precio": 420000, "img": "../img/bajo.png", "descripcion": "Aporta la base rítmica y armónica, fundamental en géneros como rock, jazz y funk." },
+  { "nombre": "Armonica", "precio": 80000, "img": "../img/armonica.png", "descripcion": "Pequeño instrumento de viento, usado en blues, folk y música country." }
+]

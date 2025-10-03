@@ -1,0 +1,44 @@
+@use "./utilities/extends";
+@use "./utilities/variables";
+@use "./layout/header";
+@use "./layout/main";
+@use "./layout/footer";
+@use "./mq/mq";
+
+
+/* Estilos Generales */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif !important;
+}
+
+.logotipo{
+    width: 5rem; /*Usamos rem para que se escale correctamente (un tema de mantener las proporciones consistentes, 1rem=16px)*/
+    height: 5rem;
+}
+
+ul{
+    @include extends.flexColumn;
+    list-style: none; /*Le saca las pelotitas a la lista*/
+    gap: 1rem;
+}
+
+
+.texto-hover {
+  transition: transform 0.8s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.logotipo {
+  transition: transform 0.8s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+

@@ -1,0 +1,65 @@
+/*Extends*/
+
+
+@mixin flexColumn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin paginasHeader{
+    background-image: url(../img/fondo2.png);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 100vh; 
+}
+
+@mixin footerEspecifico{
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+@mixin decoracionBoton{
+    padding: 3px;
+    border: 2px solid transparent;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.527);
+    transition: border .3s ease-in-out;
+}
+
+@mixin configuracionContacto{
+  padding: 2rem;
+  border-radius: 8px;
+  flex: 1;
+  margin-top: 5rem; 
+}
+
+@mixin configuracionFondo{
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+@mixin flex{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin muestreo{
+    z-index: 1;
+    position: relative; 
+}
+
+@mixin flexWrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@mixin btnCard{
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}

@@ -1,0 +1,13 @@
+@use "./utilities/extends";
+
+
+/*Estilos footer*/
+
+
+/*CONTACTO AND FOOTER*/
+.footer-nosotros,
+.footer-contacto {
+  @include extends.footerEspecifico;
+}
+
+

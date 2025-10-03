@@ -1,0 +1,63 @@
+/* Estilos Mains */
+
+
+/*INDEX*/
+.main-index{
+    padding: 2rem;
+    background-color: rgba(245, 245, 220, 0.582);
+}
+.card-opinion{
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    padding-top: 2rem;
+}
+.div-contenedor{
+    border-radius: 20px;
+    width: 18rem;
+    background-color: rgba(255, 255, 255, 0.658);
+    border: 1px solid variables.$colorNegro;
+}
+.card-texto{
+    padding: 2rem 1rem 0px 1rem;
+}
+.testimonial-card__icon{
+    padding-top: 16px;
+    padding-left: 16px;
+}
+
+
+/*PRODUCTOS*/
+.ultimos-modelos-titulo{
+    text-align: center;
+    margin: variables.$size 0;
+}
+.card-auto{
+    width: 25rem; 
+    background-color: rgba(0, 0, 0, 0.082);
+    transition: transform 0.5s;
+    @include extends.btnCard;
+}
+.card-auto:hover{
+    transform: scale(1.02);
+}
+.card-auto img{
+    border: 0.5rem;
+}
+.card-auto h3, .card-auto p{
+    margin-left: variables.$size;
+}
+.card-auto-btm{
+    border: none;
+    padding: 8px;
+    font-weight: 800;
+    margin-top: 0.5rem;
+    text-transform: uppercase; 
+    @include extends.btnCard;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.26)
+}
+.ultimos-modelos-container{
+    @include extends.flexWrap;
+    gap: variables.$size;
+}

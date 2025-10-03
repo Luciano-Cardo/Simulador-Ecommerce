@@ -1,0 +1,35 @@
+/*Estilos Media Query*/
+
+/*LARGER SCREEN*/
+@media only screen and (min-width: 900px){
+    ul, .index-header-flex{
+        flex-direction: row;
+    }
+    .sucursales-main-container{
+        flex-direction: row;
+        width: 50%;
+    }
+    .contenedor-inferior-header-sucursales{
+        max-width: 50%;
+    }
+    .btn-header{
+        width: 30rem;
+    }
+    .contact-wrapper {
+        flex-direction: row;
+    }
+    .info-tienda,
+    .formulario-contacto {
+        width: 50%;
+    }
+}
+
+/*TABLET*/
+@media (min-width: 480px) and (max-width: 768px){
+
+}
+
+/*LAPTOP*/
+@media (min-width: 768px) and (max-width: 900x){
+
+}
