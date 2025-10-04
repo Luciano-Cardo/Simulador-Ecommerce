@@ -8,6 +8,35 @@ const contadorCarrito = document.getElementById("contador-carrito");
 
 export function inicializarCarrito() {
   actualizarCarrito();
+  inicializarBotonesCarrito();
+}
+
+function inicializarBotonesCarrito() {
+  const btnVaciar = document.getElementById("vaciar-carrito");
+  if (btnVaciar) {
+    btnVaciar.addEventListener("click", () => {
+      if (carrito.length === 0) {
+        Swal.fire("El carrito ya está vacío", "", "info");
+        return;
+      }
+
+      Swal.fire({
+        title: "¿Estás seguro?",
+        text: "Se eliminarán todos los productos del carrito.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Sí, vaciar",
+        cancelButtonText: "Cancelar"
+      }).then(result => {
+        if (result.isConfirmed) {
+          carrito.length = 0;
+          guardar("carrito", carrito);
+          actualizarCarrito();
+          Swal.fire("¡Carrito vacío!", "", "success");
+        }
+      });
+    });
+  }
 }
 
 export function agregarAlCarrito(producto) {
@@ -43,7 +72,6 @@ export function actualizarCarrito() {
     listaCarrito.appendChild(li);
     total += prod.precio * prod.cantidad;
 
-    // Botones
     li.querySelector(".btn-eliminar").addEventListener("click", () => { eliminarProducto(index); });
     li.querySelector(".btn-sumar").addEventListener("click", () => { sumarProducto(prod); });
     li.querySelector(".btn-restar").addEventListener("click", () => { restarProducto(prod, index); });
@@ -74,7 +102,10 @@ function restarProducto(prod, index) {
   actualizarCarrito();
 }
 
-export function vaciarCarrito(btnVaciar) {
+export function vaciarCarrito() {
+  const btnVaciar = document.getElementById("vaciar-carrito");
+  if (!btnVaciar) return; 
+
   btnVaciar.addEventListener("click", () => {
     if (carrito.length === 0) {
       Swal.fire("El carrito ya está vacío", "", "info");
@@ -96,5 +127,38 @@ export function vaciarCarrito(btnVaciar) {
         Swal.fire("¡Carrito vacío!", "", "success");
       }
     });
+  });
+}
+
+export function inicializarPago() {
+  const btnPagar = document.getElementById("btn-pagar");
+  btnPagar.addEventListener("click", () => {
+    if (carrito.length === 0) {
+      Swal.fire("Tu carrito está vacío", "Agrega productos antes de pagar", "info");
+      return;
+    }
+
+    Swal.fire({
+      title: "¡Compra realizada!",
+      text: "Gracias por confiar en MusicHouse 🎵",
+      icon: "success",
+      confirmButtonText: "Aceptar"
+    }).then(() => {
+      carrito.length = 0; 
+      guardar("carrito", carrito);
+      actualizarCarrito();
+    });
+  });
+}
+
+const btnPagar = document.getElementById("btn-pagar");
+
+if (btnPagar) {
+  btnPagar.addEventListener("click", () => {
+    if (carrito.length === 0) {
+      Swal.fire("Tu carrito está vacío", "Agrega productos antes de pagar", "info");
+      return;
+    }
+    window.location.href = "pago.html";
   });
 }
