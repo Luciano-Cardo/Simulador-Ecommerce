@@ -3,6 +3,7 @@ import { agregarAlCarrito } from './carrito.js';
 const productosContainer = document.getElementById("productos-container");
 
 export async function cargarProductos() {
+  if (!productosContainer) return; 
   try {
     const res = await fetch("../data/productos.json");
     const productos = await res.json();
@@ -13,7 +14,9 @@ export async function cargarProductos() {
 }
 
 function mostrarProductos(productos) {
+  if (!productosContainer) return;
   productosContainer.innerHTML = "";
+
   productos.forEach(prod => {
     const card = document.createElement("article");
     card.className = "card-auto";
@@ -26,14 +29,17 @@ function mostrarProductos(productos) {
     `;
     productosContainer.appendChild(card);
 
-    card.querySelector(".btn-comprar").addEventListener("click", () => {
-      agregarAlCarrito(prod);
-      Swal.fire({
-        title: "¡Producto agregado!",
-        text: `${prod.nombre} se añadió al carrito.`,
-        icon: "success",
-        confirmButtonText: "Aceptar"
+    const btnComprar = card.querySelector(".btn-comprar");
+    if (btnComprar) {
+      btnComprar.addEventListener("click", () => {
+        agregarAlCarrito(prod);
+        Swal.fire({
+          title: "¡Producto agregado!",
+          text: `${prod.nombre} se añadió al carrito.`,
+          icon: "success",
+          confirmButtonText: "Aceptar"
+        });
       });
-    });
+    }
   });
 }

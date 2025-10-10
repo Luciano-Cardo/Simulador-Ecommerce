@@ -2,8 +2,10 @@ import { recuperar, guardar } from "./storage.js";
 
 let carrito = recuperar("carrito");
 const resumenContainer = document.getElementById("resumen-carrito");
+const formPago = document.getElementById("form-pago");
 
-function mostrarResumen() {
+export function mostrarResumen() {
+  if (!resumenContainer) return; 
   resumenContainer.innerHTML = "";
 
   if (carrito.length === 0) {
@@ -36,15 +38,12 @@ function mostrarResumen() {
       </div>
     `;
     lista.appendChild(item);
-
     total += prod.precio * prod.cantidad;
 
+    // Botones de cada producto
     item.querySelector(".btn-eliminar").addEventListener("click", () => {
-      if (carrito[index].cantidad > 1) {
-        carrito[index].cantidad -= 1;
-      } else {
-        carrito.splice(index, 1);
-      }
+      if (carrito[index].cantidad > 1) carrito[index].cantidad -= 1;
+      else carrito.splice(index, 1);
       guardar("carrito", carrito);
       mostrarResumen();
     });
@@ -56,11 +55,8 @@ function mostrarResumen() {
     });
 
     item.querySelector(".btn-restar").addEventListener("click", () => {
-      if (carrito[index].cantidad > 1) {
-        carrito[index].cantidad -= 1;
-      } else {
-        carrito.splice(index, 1);
-      }
+      if (carrito[index].cantidad > 1) carrito[index].cantidad -= 1;
+      else carrito.splice(index, 1);
       guardar("carrito", carrito);
       mostrarResumen();
     });
@@ -74,27 +70,30 @@ function mostrarResumen() {
   resumenContainer.appendChild(lista);
 }
 
+// Mostrar resumen al cargar la página
 mostrarResumen();
 
-document.getElementById("form-pago").addEventListener("submit", (e) => {
-  e.preventDefault();
+// Manejo del formulario de pago
+if (formPago) {
+  formPago.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (carrito.length === 0) {
+      Swal.fire("Tu carrito está vacío", "", "info");
+      return;
+    }
 
-  if (carrito.length === 0) {
-    Swal.fire("Tu carrito está vacío", "", "info");
-    return;
-  }
+    const numeroPedido = Math.floor(Math.random() * 1000000);
 
-  const numeroPedido = Math.floor(Math.random() * 1000000);
-
-  Swal.fire({
-    title: "¡Gracias por tu compra! 🎉",
-    html: `Tu número de pedido es <strong>#${numeroPedido}</strong>.<br>
-           Te enviamos un email con el detalle de tu compra.`,
-    icon: "success",
-    confirmButtonText: "Volver al inicio"
-  }).then(() => {
-    carrito = [];
-    guardar("carrito", carrito);
-    window.location.href = "../index.html";
+    Swal.fire({
+      title: "¡Gracias por tu compra! 🎉",
+      html: `Tu número de pedido es <strong>#${numeroPedido}</strong>.<br>
+             Te enviamos un email con el detalle de tu compra.`,
+      icon: "success",
+      confirmButtonText: "Volver al inicio"
+    }).then(() => {
+      carrito = [];
+      guardar("carrito", carrito);
+      window.location.href = "../index.html";
+    });
   });
-});
+}

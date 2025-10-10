@@ -1,10 +1,27 @@
 import { cargarProductos } from './productos.js';
-import { inicializarCarrito, vaciarCarrito } from './carrito.js';
+import { inicializarCarrito, vaciarCarrito, inicializarPago } from './carrito.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  cargarProductos();
-  inicializarCarrito();
+  // --- 🏠 Página de inicio / productos ---
+  if (document.getElementById("productos-container")) {
+    cargarProductos();
+  }
 
-  const btnVaciar = document.getElementById("vaciar-carrito");
-  vaciarCarrito(btnVaciar);
+  // --- 🛒 Página del carrito ---
+  if (document.getElementById("carrito-lista")) {
+    inicializarCarrito();
+    vaciarCarrito();
+  }
+
+  // --- 💳 Página de pago ---
+  if (document.getElementById("form-pago")) {
+    inicializarPago();
+  } else {
+    const btnPagar = document.getElementById("btn-pagar");
+    if (btnPagar) {
+      btnPagar.addEventListener("click", () => {
+        window.location.href = "pago.html";
+      });
+    }
+  }
 });
